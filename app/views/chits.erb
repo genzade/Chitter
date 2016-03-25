@@ -35,13 +35,13 @@ Welcome <%= current_user.username %>! Chit away!
       </form>
     <% end %>
     <% if chit.replies %>
-    <% chit.replies.each do |reply| %>
-    <div id="reply">
-      <%= reply.reply_text %>
-      <%= reply.reply_time %>
-      <%= reply.user.username %>
-    </div>
-    <% end %>
+      <% chit.replies.each do |reply| %>
+      <div id="reply">
+        <%= reply.reply_text %>
+        <%= reply.reply_time %>
+        <%= reply.user.username %>
+      </div>
+      <% end %>
     <% end %>
   </article>
   <br>
