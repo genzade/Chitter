@@ -55,9 +55,4 @@ module SessionHelpers
     fill_in('chit_text', with: 'second chit')
     click_button('Chit!')
   end
-
-  def user_log_out_and_view_chits
-    click_button('Log out')
-    click_button('View chits')
-  end
 end
