@@ -10,25 +10,11 @@ require 'byebug'
 require_relative 'data_mapper_setup'
 
 require_relative 'server'
+require_relative 'controllers/user'
 
 class Chitter < Sinatra::Base
   get '/' do
     erb(:index)
-  end
-
-  post '/users' do
-    user = User.create(full_name:             params[:full_name],
-                       username:              params[:username],
-                       email:                 params[:email],
-                       password:              params[:password],
-                       password_confirmation: params[:password_confirmation])
-    if user.save
-      session[:user_id] = user.id
-      redirect '/chits'
-    else
-      flash.now[:errors] = user.errors.full_messages
-      erb(:index)
-    end
   end
 
   post '/sessions' do
