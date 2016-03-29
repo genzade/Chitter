@@ -14,10 +14,6 @@ require_relative 'controllers/user'
 require_relative 'controllers/chits'
 
 class Chitter < Sinatra::Base
-  get '/' do
-    erb(:index)
-  end
-
   post '/sessions' do
     @user = User.authenticate(params[:username], params[:password])
     if @user
