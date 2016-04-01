@@ -1,3 +1,7 @@
+<% if current_user %>
+  <%= partial :'partials/new_chit' %>
+<% end %>
+  
 <% if @chits %>
   <section id="chits_section">
     <h3>Chits:</h3>
