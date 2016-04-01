@@ -4,12 +4,8 @@
     <title>Chitter</title>
   </head>
   <body>
+    <%= partial :'partials/navbar' %>
     <%= partial :'partials/flash' %>
-    <% if current_user %>
-      <%= partial :'partials/welcome' %>
-    <% else %>
-      <%= partial :'partials/navbar' %>
-    <% end %>
     <%= yield %>
   </body>
 </html>
