@@ -1,4 +1,12 @@
-
+<% if current_user %>
+  <form method="post" action="/create_chits">
+    <label for="chit_field">
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+      <input type="text" name="chit_text" placeholder="Chit here!" required autofocus>
+      <input type="submit" value="Chit!">
+    </label>
+  </form>
+<% end %>
 <% if @chits %>
   <section id="chits_section">
     <h3>Chits:</h3>

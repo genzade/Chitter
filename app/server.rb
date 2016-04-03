@@ -10,6 +10,6 @@ class Chitter < Sinatra::Base
   helpers Helpers
 
   get '/' do
-    redirect(:chits)
+    redirect(:'chits/index')
   end
 end
