@@ -5,6 +5,7 @@ module SessionHelpers
                    password: 'ihatewolverine92',
                    password_confirmation: 'ihatewolverine92')
     visit '/'
+    click_button('Sign up')
     expect(page.status_code).to eq(200)
     fill_in('full_name', with: full_name)
     within("//section[@id='sign_up']") { fill_in('username', with: username) }
@@ -22,6 +23,7 @@ module SessionHelpers
                    password: 'ihatedeadpool29',
                    password_confirmation: 'ihatedeadpool29')
     visit '/'
+    click_button('Sign up')
     expect(page.status_code).to eq(200)
     fill_in('full_name', with: full_name)
     within("//section[@id='sign_up']") { fill_in('username', with: username) }
