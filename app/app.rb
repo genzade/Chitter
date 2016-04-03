@@ -8,6 +8,7 @@ require 'tilt/erb'
 require 'byebug'
 
 require_relative 'data_mapper_setup'
+require_relative 'helpers'
 
 require_relative 'server'
 require_relative 'controllers/user'
