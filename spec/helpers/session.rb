@@ -36,6 +36,7 @@ module SessionHelpers
   def user_log_in(username:, password:)
     visit '/'
     expect(page.status_code).to eq(200)
+    click_button('Log in')
     within("//section[@id='log_in']") { fill_in('username', with: username) }
     within("//section[@id='log_in']") { fill_in('password', with: password) }
     click_button('Log in')
