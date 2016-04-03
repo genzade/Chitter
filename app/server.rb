@@ -10,6 +10,6 @@ class Chitter < Sinatra::Base
   helpers Helpers
 
   get '/' do
-    erb(:index)
+    redirect(:chits)
   end
 end

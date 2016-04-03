@@ -9,15 +9,15 @@ class Chitter < Sinatra::Base
       session[:user_id] = @user.id
       redirect '/chits'
     else
-      flash.now[:details_error] =
+      flash.keep[:details_error] =
       'Incorrect username or password. Check your details or please sign up.'
-      erb(:index)
+      redirect '/chits'
     end
   end
 
   delete '/sessions' do
     session[:user_id] = nil
-    flash.now[:notice] = 'Thank you and goodbye!'
-    erb(:index)
+    flash.keep[:notice] = 'Thank you and goodbye!'
+    redirect '/chits'
   end
 end

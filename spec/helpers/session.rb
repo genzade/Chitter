@@ -14,7 +14,7 @@ module SessionHelpers
     within("//section[@id='sign_up']") do
       fill_in('password_confirmation', with: password_confirmation)
     end
-    click_button('Sign up')
+    click_button('Go!')
   end
 
   def second_user_sign_up(full_name: 'James Howlett',
@@ -32,7 +32,7 @@ module SessionHelpers
     within("//section[@id='sign_up']") do
       fill_in('password_confirmation', with: password_confirmation)
     end
-    click_button('Sign up')
+    click_button('Go!')
   end
 
   def user_log_in(username:, password:)
@@ -41,7 +41,7 @@ module SessionHelpers
     click_button('Log in')
     within("//section[@id='log_in']") { fill_in('username', with: username) }
     within("//section[@id='log_in']") { fill_in('password', with: password) }
-    click_button('Log in')
+    click_button('Go!')
   end
 
   def first_chit
@@ -61,6 +61,5 @@ module SessionHelpers
 
   def user_log_out_and_view_chits
     click_button('Log out')
-    click_button('View chits')
   end
 end
