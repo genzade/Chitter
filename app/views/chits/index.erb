@@ -1,5 +1,5 @@
 <% if current_user %>
-  <form method="post" action="/create_chits">
+  <form method="post" action="/chits/chit">
     <label for="chit_field">
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
       <input type="text" name="chit_text" placeholder="Chit here!" required autofocus>
@@ -18,7 +18,7 @@
           <%= chit.user.username %>
         </div>
         <% if current_user %>
-          <form id="reply_form" method="post" action="create_reply">
+          <form id="reply_form" method="post" action="reply">
             <label for="reply_field">
               <input type="hidden" name="user_id" value="<%= current_user.id %>">
               <input type="hidden" name="chit_id" value="<%= chit.id %>">
