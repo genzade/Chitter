@@ -11,6 +11,4 @@ class Chitter < Sinatra::Base
     chit.save
     redirect '/chits/index'
   end
-
-  
 end
