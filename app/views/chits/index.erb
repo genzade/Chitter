@@ -18,7 +18,7 @@
           <%= chit.user.username %>
         </div>
         <% if current_user %>
-          <form id="reply_form" method="post" action="reply">
+          <form id="reply_form" method="post" action="/chits/reply">
             <label for="reply_field">
               <input type="hidden" name="user_id" value="<%= current_user.id %>">
               <input type="hidden" name="chit_id" value="<%= chit.id %>">
