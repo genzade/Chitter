@@ -1,4 +1,3 @@
-# require 'byebug'
 class Chitter < Sinatra::Base
   get '/users/new' do
     erb(:'users/new')
@@ -27,9 +26,16 @@ class Chitter < Sinatra::Base
     user = User.first(email: params[:email])
     if user
       user.generate_token
-      # user.save!
     end
-      # byebug
     erb(:'users/acknowledgement')
+  end
+
+  get '/users/reset_password' do
+    @user = User.find_by_valid_token(params[:token])
+    if @user
+      'Please enter your new password'
+    else
+      'Your token is invalid'
+    end
   end
 end
