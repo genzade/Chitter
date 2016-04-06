@@ -6,7 +6,7 @@ describe User do
                            password: 'ihatewolverine92',
                            password_confirmation: 'ihatewolverine92') 
   end
-  describe '#authnticate' do
+  describe '#authenticate' do
     it 'user with correct details' do
       existent_user = User.authenticate('Deadpool', 'ihatewolverine92')
       expect(existent_user).to eq user

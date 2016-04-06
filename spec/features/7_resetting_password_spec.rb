@@ -29,10 +29,20 @@ feature 'Resetting Password' do
       expect(page).to have_content 'Your token is invalid'
     end
   end
-  
+
   scenario 'it asks for your new password when your token is valid' do
     recover_password
     visit("/users/reset_password?token=#{user.password_token}")
     expect(page).to have_content("Please enter your new password")
+  end
+
+  scenario 'it lets you enter a new password with a valid token' do
+    recover_password
+    visit("/users/reset_password?token=#{user.password_token}")
+    fill_in :password, with: 'new_password'
+    fill_in :password_confirmation, with: 'new_password'
+    click_button 'Submit'
+    expect(page).to have_field('Username')
+    expect(page).to have_field('Password')
   end
 end
