@@ -1,5 +1,5 @@
 feature 'User Reply' do
-  scenario '' do
+  scenario 'replies to chit' do
     user_sign_up
     first_chit
     click_button('Log out')

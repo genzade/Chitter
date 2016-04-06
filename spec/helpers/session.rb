@@ -59,7 +59,9 @@ module SessionHelpers
     click_button('Chit!')
   end
 
-  def user_log_out_and_view_chits
-    click_button('Log out')
+  def recover_password
+    visit '/users/recover'
+    fill_in :email, with: 'chimichongas@gmail.com'
+    click_button 'Submit'
   end
 end

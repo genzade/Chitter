@@ -1,3 +1,4 @@
+# require 'byebug'
 class Chitter < Sinatra::Base
   get '/users/new' do
     erb(:'users/new')
@@ -16,5 +17,19 @@ class Chitter < Sinatra::Base
       flash.keep[:errors] = user.errors.full_messages
       redirect '/users/new'
     end
+  end
+
+  get '/users/recover' do
+    erb(:'users/recover')
+  end
+
+  post '/users/recover' do
+    user = User.first(email: params[:email])
+    if user
+      user.generate_token
+      # user.save!
+    end
+      # byebug
+    erb(:'users/acknowledgement')
   end
 end

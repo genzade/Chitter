@@ -6,7 +6,6 @@ describe User do
                            password: 'ihatewolverine92',
                            password_confirmation: 'ihatewolverine92') 
   end
-
   describe '#authnticate' do
     it 'user with correct details' do
       existent_user = User.authenticate('Deadpool', 'ihatewolverine92')
@@ -16,6 +15,12 @@ describe User do
     it 'user with incorrect details' do
       non_existent_user = User.authenticate('Deadpool', 'wrongPassword')
       expect(non_existent_user).to be_nil
+    end
+  end
+  
+  describe '#password_recover' do
+    it "saves a password recovery token when we generate a token" do
+      expect{user.generate_token}.to change{user.password_token}
     end
   end
 end
