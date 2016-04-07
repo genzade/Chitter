@@ -1,10 +1,16 @@
 feature 'User Log In' do
   feature 'Registered user' do
-    scenario 'can enter the website' do
+    before do
       user_sign_up
       click_button('Log out')
       user_log_in(username: 'Deadpool', password: 'ihatewolverine92')
       expect(page).to have_content('Logged in as Deadpool! Chit away!')
+    end
+
+    scenario 'cannot sign up/log in when already signed up' do
+      visit '/'
+      expect(page).not_to have_button('Sign up')
+      expect(page).not_to have_button('Log in')
     end
   end
 
