@@ -5,7 +5,7 @@ require 'sinatra/flash'
 require 'sinatra/partial'
 require 'rubygems'
 require 'tilt/erb'
-require 'byebug'
+# require 'byebug'
 
 require_relative 'data_mapper_setup'
 require_relative 'helpers'
