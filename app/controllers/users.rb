@@ -49,8 +49,6 @@ class Chitter < Sinatra::Base
       erb(:'users/reset_password')
     else
       'Your token is invalid'
-      flash.keep[:errors] = user.errors.full_messages
-      redirect '/chits'
     end
   end
 end
