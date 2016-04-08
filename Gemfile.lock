@@ -75,6 +75,9 @@ GEM
     highline (1.7.8)
     json (1.8.3)
     json_pure (1.8.3)
+    mailgun-ruby (1.1.0)
+      json (~> 1.8)
+      rest-client (~> 1.6)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
@@ -88,6 +91,8 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (11.1.2)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -142,6 +147,7 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
+  mailgun-ruby
   rake
   rspec
   rspec-sinatra

@@ -37,6 +37,7 @@ class Chitter < Sinatra::Base
     user = User.first(email: params[:email])
     if user
       user.generate_token
+      SendRecoverLink.call(user)
     end
     erb(:'users/acknowledgement')
   end
@@ -44,7 +45,6 @@ class Chitter < Sinatra::Base
   get '/users/reset_password' do
     @token = params[:token]
     @user = User.find_by_valid_token(@token)
-    # p @user.password_token
     if @user
       erb(:'users/reset_password')
     else

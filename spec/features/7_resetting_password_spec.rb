@@ -2,6 +2,7 @@ feature 'Resetting Password' do
   before do
     user_sign_up
     Capybara.reset!
+    allow(SendRecoverLink).to receive(:call)
   end
   let(:user){ User.first }
 
