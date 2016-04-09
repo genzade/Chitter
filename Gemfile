@@ -10,6 +10,7 @@ gem 'rake'
 gem 'bcrypt'
 gem 'sinatra-flash'
 gem 'mailgun-ruby'
+gem 'dotenv'
 
 group :test do
   gem 'byebug'
