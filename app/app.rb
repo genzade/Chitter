@@ -1,5 +1,6 @@
 ENV['RACK_ENV'] ||= 'development'
 
+require 'compass'
 require 'sinatra/base'
 require 'sinatra/flash'
 require 'sinatra/partial'

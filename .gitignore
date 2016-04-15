@@ -2,4 +2,4 @@
 .byebug_history
 .env
 NOTES.md
-app/public/
+/public/.sass-cashe
