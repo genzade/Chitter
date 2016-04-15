@@ -1,6 +1,6 @@
 # Chitter: a Twitter clone
 
-This was onriginally a weekend challenge set by our coaches at Makers Academy. I was not happy with what I produced the first time around so I added 'complete the chitter challnge + extend it' to my coding bucket list. This is the challenge set to us [chitter-challenge](https://github.com/makersacademy/chitter-challenge).
+This was originally a weekend challenge set by our coaches at Makers Academy. I was not happy with what I produced the first time around so I added 'complete the chitter challnge + extend it' to my coding bucket list. This is the challenge set to us [chitter-challenge](https://github.com/makersacademy/chitter-challenge).
 
 ## Features
 ```
@@ -20,11 +20,11 @@ As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
 
-As a maker
+As a Maker
 So that I can see what others are saying  
 I want to see all peeps in reverse chronological order
 
-As a maker
+As a Maker
 So that I can better appreciate the context of a peep
 I want to see the time at which it was made
 ```
