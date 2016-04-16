@@ -1,6 +1,6 @@
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 
-@import "variables";
+@import "normVars";
 // After the default variables are set, import the required Compass partials.
 // Feel free to move these lines to your own initialization partial.
 @import "compass/support";

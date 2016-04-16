@@ -12,7 +12,6 @@ gem 'sinatra-flash'
 gem 'mailgun-ruby'
 gem 'dotenv'
 gem 'compass'
-gem 'support-for', '~> 1.0'
 
 group :test do
   gem 'byebug'
