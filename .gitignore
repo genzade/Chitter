@@ -3,3 +3,4 @@
 .env
 NOTES.md
 app/public/.sass-cache/*
+*.DS_Store

@@ -1,14 +1,28 @@
-<% if current_user %>
-  <form method="post" action="/sessions">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Log out">
-  </form>
-  Logged in as <%= current_user.username %>! Chit away!
-<% else %>
-  <form action="/users/new" method="get">
-    <input type="submit" value="Sign up">
-  </form>
-  <form action="/sessions/new" method="get">
-    <input type="submit" value="Log in">
-  </form>
-<% end %>
+<ul>
+  <li><a id="home" href="/">home</a></li>
+  <li><a id="about" href="https://github.com/genzade/Chitter/blob/master/README.md" >about</a></li>
+  <li><a id="code" href="https://github.com/genzade/Chitter/tree/master/app" >view code</a></li>
+  <li><a id="logo" href="#">IMAGE</a></li>
+  <% if current_user %>
+    <li>
+      <form method="post" action="/sessions">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log out">
+      </form>
+    </li>
+    Logged in as <%= current_user.username %>! Chit away!
+  <% else %>
+    <div id="signupLogin">
+      <li>
+        <form action="/users/new" method="get">
+          <input type="submit" value="Sign up">
+        </form>
+      </li>
+      <li>
+        <form action="/sessions/new" method="get">
+          <input type="submit" value="Log in">
+        </form>
+      </li>
+    </div>
+  <% end %>
+</ul>

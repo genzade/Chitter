@@ -1,2 +1,62 @@
 @import "compass";
-@import "partials/normalize/normalize";
+@import "partials/variables";
+@import "partials/normalize";
+@import "partials/base";
+
+.shadow {
+    @include box-shadow(black 25px 25px 25px);
+}
+
+.nav-top {
+  @include border-radius(20px);
+  #signupLogin {
+    @include inline-block;
+    width: 220px;
+    float: right;
+    form {
+      height: 65px;
+      position: center;
+      padding: 19px 19px;
+    }
+  }
+
+  background: $nav-bg-color;
+  opacity: .8;
+
+  ul {
+
+    list-style: none;
+    li {
+      @include inline-block;
+      
+      input {
+        margin: 0 auto;
+      }
+      a {
+        padding: 10px 10px ;
+        position: center;
+        border: 0;
+      }
+      #logo {
+        @include inline-block;
+        width: 315px;
+        height: 65px;
+        padding: 19px 19px;
+        background: image-url("logo.png") no-repeat;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;   
+      }
+    }
+  }
+}
+
+input {
+  @include border-radius(6px);
+}
+
+input[type="text"] {
+  @include input-placeholder {
+    font-style: italic;
+  }
+}
