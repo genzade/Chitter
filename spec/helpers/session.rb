@@ -8,10 +8,10 @@ module SessionHelpers
     click_link 'Sign Up'
     expect(page.status_code).to eq(200)
     fill_in('full_name', with: full_name)
-    within("//section[@id='sign_up']") { fill_in('username', with: username) }
+    within("//div[@class='sign_up']") { fill_in('username', with: username) }
     fill_in('email', with: email)
-    within("//section[@id='sign_up']") { fill_in('password', with: password) }
-    within("//section[@id='sign_up']") do
+    within("//div[@class='sign_up']") { fill_in('password', with: password) }
+    within("//div[@class='sign_up']") do
       fill_in('password_confirmation', with: password_confirmation)
     end
     click_button('Go!')
@@ -26,10 +26,10 @@ module SessionHelpers
     click_link 'Sign Up'
     expect(page.status_code).to eq(200)
     fill_in('full_name', with: full_name)
-    within("//section[@id='sign_up']") { fill_in('username', with: username) }
+    within("//div[@class='sign_up']") { fill_in('username', with: username) }
     fill_in('email', with: email)
-    within("//section[@id='sign_up']") { fill_in('password', with: password) }
-    within("//section[@id='sign_up']") do
+    within("//div[@class='sign_up']") { fill_in('password', with: password) }
+    within("//div[@class='sign_up']") do
       fill_in('password_confirmation', with: password_confirmation)
     end
     click_button('Go!')
@@ -39,8 +39,8 @@ module SessionHelpers
     visit '/'
     expect(page.status_code).to eq(200)
     click_link 'Log In'
-    within("//section[@id='log_in']") { fill_in('username', with: username) }
-    within("//section[@id='log_in']") { fill_in('password', with: password) }
+    within("//div[@class='log_in']") { fill_in('username', with: username) }
+    within("//div[@class='log_in']") { fill_in('password', with: password) }
     click_button('Go!')
   end
 
