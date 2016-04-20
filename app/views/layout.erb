@@ -10,12 +10,10 @@
     <title>Chitter</title>
   </head>
   <body>
-    <div class="nav-top">
-      <%= partial :'partials/navbar' %>
-    </div>
-    <div id="wrapper">
-        <%= partial :'partials/flash' %>
-        <%= yield %>
+    <%= partial :'partials/navbar' %>
+    <div class="wrapper">
+      <%= partial :'partials/flash' %>
+      <%= yield %>
     </div>
   </body>
 </html>

@@ -4,7 +4,7 @@ feature 'User Log In' do
       user_sign_up
       click_button('Log out')
       user_log_in(username: 'Deadpool', password: 'ihatewolverine92')
-      expect(page).to have_content('Logged in as Deadpool! Chit away!')
+      expect(page).to have_content('Logged in as Deadpool!')
     end
 
     scenario 'cannot sign up/log in when already signed up' do

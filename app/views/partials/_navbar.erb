@@ -1,28 +1,22 @@
-<ul>
-  <li><a id="home" href="/">home</a></li>
-  <li><a id="about" href="https://github.com/genzade/Chitter/blob/master/README.md" >about</a></li>
-  <li><a id="code" href="https://github.com/genzade/Chitter/tree/master/app" >view code</a></li>
-  <li><a id="logo" href="#">IMAGE</a></li>
-  <% if current_user %>
-    <li>
-      <form method="post" action="/sessions">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log out">
-      </form>
-    </li>
-    Logged in as <%= current_user.username %>! Chit away!
-  <% else %>
-    <div id="signupLogin">
-      <li>
-        <form action="/users/new" method="get">
-          <input type="submit" value="Sign up">
+<nav class="nav">
+  <ul>
+    <li class="nav-item-left" ><a href="/">HOME</a></li>
+    <li class="nav-item-left" ><a href="https://github.com/genzade/Chitter/blob/master/README.md" >ABOUT</a></li>
+    <li class="nav-item-left" ><a href="https://github.com/genzade/Chitter/tree/master/app" >CODE</a></li>
+    <li class="nav-item-center" ><a href="#">IMAGE</a></li>
+    <% if current_user %>
+      <div class="loggedInAs">
+        Logged in as <%= current_user.username %>!
+      </div>
+      <li class="nav-btn" >
+        <form method="post" action="/sessions">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Log out">
         </form>
       </li>
-      <li>
-        <form action="/sessions/new" method="get">
-          <input type="submit" value="Log in">
-        </form>
-      </li>
-    </div>
-  <% end %>
-</ul>
+    <% else %>
+      <li class="nav-item-right" ><a href="/users/new">Sign Up</a></li>
+      <li class="nav-item-right" ><a href="/sessions/new">Log In</a></li>
+    <% end %>
+  </ul>
+</nav>

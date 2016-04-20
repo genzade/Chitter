@@ -1,42 +1,42 @@
 <% if current_user %>
-  <form method="post" action="/chits/chit">
-    <label for="chit_field">
-      <input type="hidden" name="user_id" value="<%= current_user.id %>">
-      <input type="text" name="chit_text" placeholder="Chit here!" required autofocus>
-      <input type="submit" value="Chit!">
-    </label>
-  </form>
+  <%= partial :'partials/new_chit' %>
 <% end %>
+
 <% if @chits %>
-  <section id="chits_section">
-    <h3>Chits:</h3>
-    <% @chits.each do |chit| %>
-      <article id="chit_and_reply">
-        <div id="chit">
-          <%= chit.chit_text %>
-          <%= chit.chit_time %>
-          <%= chit.user.username %>
-        </div>
-        <% if current_user %>
+  <% @chits.each do |chit| %>
+    <div class="chits-shell-wrap">
+      <p class="shell-top-bar"><strong><%= chit.user.username %></strong>~/Desktop/Chits(<strong><%= chit.user.email %></strong>):</p>
+      <ul class="shell-body">
+        chitted: <%= chit.chit_time %>
+        <li><%= chit.chit_text %></li>
+      </ul>
+    </div>
+    <% if current_user %>
+      <div class="reply-shell-wrap">
+        <ul class="shell-body">
           <form id="reply_form" method="post" action="/chits/reply">
             <label for="reply_field">
+            <li>  
               <input type="hidden" name="user_id" value="<%= current_user.id %>">
               <input type="hidden" name="chit_id" value="<%= chit.id %>">
               <input type="text" name="reply_text" placeholder="Reply to <%= chit.user.username %>">
               <input type="submit" value="Reply">
+            </li>
             </label>
           </form>
-        <% end %>
-        <% if chit.replies %>
-          <% chit.replies.each do |reply| %>
-            <div id="reply">
-              <%= reply.reply_text %>
-              <%= reply.reply_time %>
-              <%= reply.user.username %>
-            </div>
-          <% end %>
-        <% end %>
-      </article>
+        </ul>
+      </div>
     <% end %>
-  </section>
+    <% if chit.replies %>
+      <% chit.replies.each do |reply| %>
+        <div class="chits-shell-wrap">
+          <ul class="shell-body">
+            <li><strong><%= reply.user.username %></strong>~/reply(<strong><%= reply.user.email %></strong>):</li>
+            <li><%= reply.reply_text %></li>
+            replied: <%= reply.reply_time %>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

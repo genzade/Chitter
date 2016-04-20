@@ -1,0 +1,12 @@
+<% if current_user %>
+<div class="reply-form">
+  <form id="reply_form" method="post" action="/chits/reply">
+    <label for="reply_field">
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+      <input type="hidden" name="chit_id" value="<%= chit.id %>">
+      <input type="text" name="reply_text" placeholder="Reply to <%= chit.user.username %>">
+      <input type="submit" value="Reply">
+    </label>
+  </form>
+</div>
+    <% end %>

@@ -1,0 +1,92 @@
+// Requirements
+// ============
+@import "compass";
+@import "susy";
+
+// http://susy.readthedocs.org/en/latest/settings/
+
+$susy: (
+  // Number of columns in layout
+  columns: 12,
+
+  // Percentage width of gutters relative to columns
+  // 1: Gutters are same size as columns
+  gutters: 1,
+
+  // fluid: Grids calculated as % relative to container
+  // static: Grids calculated as multiple of column-width using em
+  math: fluid,
+
+  column-width: 40px, // false | value
+
+  // float: float layout
+  // isolate: Absolute positioning of floats
+  output: float,
+
+  // Where are gutters added to the layout
+  // before | after | split | inside | inside-static (requires column-width)
+  gutter-position: after,
+
+  flow: ltr, // Element Flow Direction: ltr | rtl
+
+  container: auto, // Absolute width or % or auto (100%)
+
+  // How to align container relative to parent
+  // left | center | right |
+  // Create Side margins: <length> [*2]
+  container-position: center,
+
+  // Float direction of last element
+  // from: Float to left
+  // to: Float in opposite direction (Used for Fluid Layouts)
+  last-flow: to,
+
+  // content-box | border-box (Include padding in element width)
+  global-box-sizing: border-box,
+
+  // Used for debugging
+  debug: (
+
+    // show or hide grid images
+    image: hide,
+
+    // Color of generated grid image
+    color: rgba(#656, .25),
+
+    // Show debug image as a background or overlay
+    output: background,
+
+    // Position of toggle to show and hide overlay option
+    toggle: top right,
+  ),
+  use-custom: (
+
+    // false: Output background image to CSS
+    // true: Use provided background image for debugging
+    background-image: true,
+
+    // false: Output background options to CSS
+    // true: Look for background-size, -origin and -clip
+    background-options: false,
+
+    // false: Susy outputs box-sizing
+    // true: Look for existing box-sizing
+    box-sizing: true, // look for custom bix sizing mixin
+
+    // true: look for internal clearfix before using micro clearfix
+    clearfix: false,
+
+    // true: Look for rem mixin
+    // rem is relative to the font size of the root element
+    rem: true,
+  )
+);
+
+// Easy Susy setup
+// 12 Columns, Width of gutter 1, fluid layout,
+// float layout,
+// $susy: layout(12 1 fluid float outside);
+
+// Grids for navigation
+// Eliminates the gutter between the nav items
+$nav_susy_layout: layout(12 0 fluid float inside);

@@ -1,5 +1,24 @@
+// Root unit that will define all other sizes
+$main-font-size: 16px;
+
+$red: #FF0000;
+$white: #FFFFFF;
+$gray: #808080;
+$pink: #FFCBDB;
+$brown: #964B00;
+$orange: #FF7F00;
+$yellow: #FFFF00;
+$green: #00FF00;
+$cyan: #00FFFF;
+$blue: #0000FF;
+$violet: #7F00FF;
+$black: #000000;
+
 $nav-bg-color: #e7b33d;
-$hover-color: #16a085;
+$hover-color: #ffffff;
 $text-color: #ffffff;
 $bg: #e6fff7;
-$logo: image-url("MALogo.jpg")
+
+$shell-top-c: #525252;
+$shell-body-c: #141414;
+$shell-text: #45D40C;

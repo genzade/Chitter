@@ -1,11 +1,24 @@
-<section id="log_in">
+
+<div class="log_in">
+  <p class="shell-top-bar">~/Fill in your details</p>
   <form action="/sessions" method="post">
-    <label for="username">
-      <input type="text" name="username" placeholder="Username" required>
-    </label>
-    <label for="password">
-      <input type="password" name="password" placeholder="Password" required>
-    </label>
-    <input type="submit" value="Go!">
+    <ul class="shell-body">
+      <li>
+        <label for="username">
+          <input type="text" name="username" placeholder="Username" required>
+        </label>
+      </li>
+      <li>
+        <label for="password">
+          <input type="password" name="password" placeholder="Password" required>
+        </label>
+      </li>
+      <li>
+        <input type="submit" value="Go!">
+      </li>
+      <li>
+        <a href="/users/recover">I forgot my password</a>
+      </li>
+    </ul>
   </form>
-</section>
+</div>

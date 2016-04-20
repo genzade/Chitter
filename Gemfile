@@ -12,6 +12,9 @@ gem 'sinatra-flash'
 gem 'mailgun-ruby'
 gem 'dotenv'
 gem 'compass'
+gem 'susy'
+gem 'breakpoint'
+gem 'normalize'
 
 group :test do
   gem 'byebug'

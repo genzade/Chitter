@@ -1,54 +1,12 @@
-@import "compass";
+@import "grids";
+@import "breakpoint";
 @import "partials/variables";
 @import "partials/normalize";
+@import "partials/layout";
 @import "partials/base";
 
 .shadow {
-    @include box-shadow(black 25px 25px 25px);
-}
-
-.nav-top {
-  @include border-radius(20px);
-  #signupLogin {
-    @include inline-block;
-    width: 220px;
-    float: right;
-    form {
-      height: 65px;
-      position: center;
-      padding: 19px 19px;
-    }
-  }
-
-  background: $nav-bg-color;
-  opacity: .8;
-
-  ul {
-
-    list-style: none;
-    li {
-      @include inline-block;
-      
-      input {
-        margin: 0 auto;
-      }
-      a {
-        padding: 10px 10px ;
-        position: center;
-        border: 0;
-      }
-      #logo {
-        @include inline-block;
-        width: 315px;
-        height: 65px;
-        padding: 19px 19px;
-        background: image-url("logo.png") no-repeat;
-        text-indent: 100%;
-        white-space: nowrap;
-        overflow: hidden;   
-      }
-    }
-  }
+  @include box-shadow(black 25px 25px 25px);
 }
 
 input {
@@ -59,4 +17,156 @@ input[type="text"] {
   @include input-placeholder {
     font-style: italic;
   }
+}
+
+nav {
+  @include span(12 of $nav_susy_layout);
+  text-align: center;
+
+  ul, li {
+    height: image-height("logo.png");
+    padding: 0;
+  }
+
+  li {
+    background: rgba($nav-bg-color, .3);
+    display: inline-block;
+    a {
+
+      text-decoration: none;
+      display:block;
+      height:65px;
+      margin: 0 auto;
+
+      color: $white;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  .loggedInAs {
+    @include span(3 of $nav_susy_layout);
+    background: rgba($nav-bg-color, .3);
+    text-decoration: none;
+    display:block;
+    height:65px;
+    margin: 0 auto;
+    color: $white;
+  }
+}
+
+.nav {
+  @include border-radius(6px);
+}
+
+.chits-shell-wrap {
+  @include container(50%);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  //width: 500px;
+  //margin: 100px auto 0 auto;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+
+}
+
+
+.shell-top-bar {
+  @include border-radius(3px);
+
+  text-align: center;
+  color: $shell-top-c;
+  padding: 5px 0;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+  font-size: 0.85em;
+  border: 1px solid #CCCCCC;
+  border-bottom: none;
+  background: #f7f7f7; /* Old browsers */
+
+  background: linear-gradient(to bottom,  #f7f7f7 0%,#B8B8B8 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#B8B8B8',GradientType=0 ); /* IE6-9 */
+}
+.reply-shell-wrap {
+  @include container(50%)
+}
+
+.shell-body {
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  background: rgba($shell-body-c, .8);
+  color: $shell-text;
+
+  li a {
+    color: $shell-text;    
+  }
+
+  input[type="text"], input[type="email"], input[type="password"] {
+    background: $shell-body-c;
+  }
+
+  input[type="submit"] {
+    color: white;
+  }
+  font: 0.8em 'Andale Mono', Consolas, 'Courier New';
+  line-height: 1.6em;
+
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.shell-body li:before {
+  content: '$';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+ 
+.shell-body li {
+  word-wrap: break-word;
+  position: relative;
+  padding: 0 0 0 15px;
+  strong {
+    color: white;
+  }
+}
+
+.nav-item-left {
+  @include span(1 of $nav_susy_layout);
+ 
+  // You can add 1 column of margin:
+  margin-bottom: span(1);
+}
+
+.nav-item-center {
+  @include span(5 of $nav_susy_layout);
+
+  float: center;
+  background: image-url("logo.png") no-repeat center rgba($nav-bg-color, .3);
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  // You can add 1 column of margin:
+  margin-bottom: span(1);
+}
+
+.nav-item-right {
+  @include span(last 1 of $nav_susy_layout);
+ 
+  // You can add 1 column of margin:
+  margin-bottom: span(1);
+}
+.nav-btn {
+  @include span(1 of $nav_susy_layout);
+}
+
+.sign_up, .log_in {
+  @extend .chits-shell-wrap;
+  @include container(23%)
+}
+
+.recovery {
+  @extend .chits-shell-wrap;
+  @include container(30%)
 }

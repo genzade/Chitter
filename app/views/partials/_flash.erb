@@ -1,6 +1,6 @@
 <%= flash.now[:details_error] %>
 <% if flash[:errors] && !flash[:errors].empty? %>
-  <ul id="errors">
+  <ul class="shell-body" id="errors">
     <% flash[:errors].each do |error| %>
       <li><%= error %></li>
     <% end %>
