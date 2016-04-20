@@ -9,9 +9,6 @@ class Chitter < Sinatra::Base
   enable :partial_underscores
   helpers Helpers
 
-  config.serve_static_assets = true
-  config.assets.compile = true
-  
   get '/' do
     redirect(:'chits/index')
   end
