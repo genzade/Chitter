@@ -49,6 +49,8 @@ At the moment we do not check for authentic emails upon sign up (see __Contribut
 - Sinatra
 - Postgres
 - DataMapper
+- Sass Compass
+- susy
 
 ## Contributing
 1. Fork it!
